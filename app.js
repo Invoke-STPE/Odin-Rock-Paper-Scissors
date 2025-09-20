@@ -6,29 +6,33 @@ const rockNumericValue = 0;
 const paperNumericValue = 1;
 const scissorsNumericValue = 2;
 
+const rockTextValue = "rock";
+const paperTextValue = "paper";
+const scissorsTextValue = "scissors";
+
 let playerScore = 0;
 let computerScore = 0;
 
 const choicesNumericValues = {
-    "rock": rockNumericValue,
-    "paper": paperNumericValue,
-    "scissors": scissorsNumericValue
+    [rockTextValue]: rockNumericValue,
+    [paperTextValue]: paperNumericValue,
+    [scissorsTextValue]: scissorsNumericValue
 }
 
 const choicesTextValues = {
-    [rockNumericValue]: "rock",
-    [paperNumericValue]: "paper",
-    [scissorsNumericValue]: "scissors"
+    [rockNumericValue]: rockTextValue,
+    [paperNumericValue]: paperTextValue,
+    [scissorsNumericValue]: scissorsTextValue
 }
 
 const gameRules = {
-    "rock": {
-        "rock": draw,
-        "paper": lose,
-        "scissors": win
+    [rockTextValue]: {
+        [rockTextValue]: draw,
+        [paperTextValue]: lose,
+        [scissorsTextValue]: win
     },
-    "paper": {
-        "paper": lose,
+    [paperTextValue]: {
+        [paperTextValue]: lose,
 
     }
 }
