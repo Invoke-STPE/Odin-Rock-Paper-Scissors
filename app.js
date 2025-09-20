@@ -32,8 +32,15 @@ const gameRules = {
         [scissorsTextValue]: win
     },
     [paperTextValue]: {
-        [paperTextValue]: lose,
+        [rockTextValue]: win,
+        [paperTextValue]: draw,
+        [scissorsTextValue]: lose
 
+    },
+    [scissorsTextValue]: {
+        [rockTextValue]: lose,
+        [paperTextValue]: win,
+        [scissorsTextValue]: draw
     }
 }
 
