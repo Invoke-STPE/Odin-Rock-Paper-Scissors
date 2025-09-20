@@ -84,7 +84,7 @@ function playGame() {
     let winner = "draw";
     if (playerScore > computerScore)
         winner = "player";
-    if (computerScore > playerScore)
+    if (computerScore < playerScore)
         winner = "computer";
 
     console.log(`winner is: ${winner}`);
