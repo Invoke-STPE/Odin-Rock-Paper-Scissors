@@ -67,13 +67,25 @@ function playRound(playerChoice, computerChoice) {
             break;
         case win:
             playerScore++;
-            console.log(`PLayer wins ${playerChoice} beats ${computerChoice}`);
+            console.log(`Player wins ${playerChoice} beats ${computerChoice}`);
             break;
         default:
             console.log('draw');
         }
 }
 
-const playerChoice = getPlayerChoice();
-const computerChoice = getComputerChoice();
-playRound(playerChoice, computerChoice);
+function playGame() {
+    for (let rounds = 0; rounds < 5; rounds++) {
+        const playerChoice = getPlayerChoice();
+        const computerChoice = getComputerChoice();
+        playRound(playerChoice, computerChoice);
+    }
+
+    let winner = "draw";
+    if (playerScore > computerScore)
+        winner = "player";
+    if (computerScore > playerScore)
+        winner = "computer";
+
+    console.log(`winner is: ${winner}`);
+}
