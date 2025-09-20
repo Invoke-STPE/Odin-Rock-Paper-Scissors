@@ -2,6 +2,9 @@ const rock = 0;
 const paper = 1;
 const scissors = 2;
 
+const playerScore = 0;
+const computerScore = 0;
+
 const choicesNumericValues = {
     "rock": rock,
     "paper": paper,
