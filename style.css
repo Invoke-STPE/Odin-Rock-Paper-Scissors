@@ -25,6 +25,7 @@ h1 {
 
 .card {
     border: 1px solid #fab005;
+    border-radius: 5px;
     background-color: #fab005;
     padding: 2rem;
 }

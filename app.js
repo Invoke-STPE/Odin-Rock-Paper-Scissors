@@ -50,15 +50,21 @@ function playRound(playerChoice, computerChoice) {
     switch(gameResult) {
         case lose:
             computerScore++;
-            console.log(`Computer wins ${computerChoice} beats ${playerChoice}`);
+            printOutput(`Computer wins ${computerChoice} beats ${playerChoice}`);
             break;
         case win:
             playerScore++;
-            console.log(`Player wins ${playerChoice} beats ${computerChoice}`);
+            printOutput(`Player wins ${playerChoice} beats ${computerChoice}`);
             break;
         default:
-            console.log('draw');
+            printOutput('draw');
         }
+}
+
+function printOutput(message) {
+    const outputArea = document.querySelector('.output');
+
+    outputArea.innerText = message;
 }
 
 function playGame(playerInput) {
@@ -66,11 +72,10 @@ function playGame(playerInput) {
     const computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
 
-    let winner = "draw";
-    if (playerScore > computerScore)
-        winner = "player";
-    if (computerScore > playerScore)
-        winner = "computer";
+    if (playerScore !== 5 || computerScore !== 5)
+        return;
 
-    console.log(`winner is: ${winner}`);
+    winner = playerScore === 5 ? 'player' : 'computer';
+
+    printOutput(`winner is: ${winner}`);
 }
