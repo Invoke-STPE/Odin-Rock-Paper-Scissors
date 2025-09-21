@@ -50,11 +50,8 @@ function getComputerChoice() {
     return choicesTextValues[randomNumber];
 }
 
-function getPlayerChoice() {
-    const playerInput = prompt();
-    const playerInputConvertedToNumericValue = choicesNumericValues[playerInput.toLocaleLowerCase()];
-
-    return choicesTextValues[playerInputConvertedToNumericValue];
+function getPlayerChoice(playerInput) {
+    return choicesTextValues[playerInput];
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -74,12 +71,10 @@ function playRound(playerChoice, computerChoice) {
         }
 }
 
-function playGame() {
-    for (let rounds = 0; rounds < 5; rounds++) {
-        const playerChoice = getPlayerChoice();
-        const computerChoice = getComputerChoice();
-        playRound(playerChoice, computerChoice);
-    }
+function playGame(playerSelection) {
+    const playerChoice = getPlayerChoice(playerSelection);
+    const computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
 
     let winner = "draw";
     if (playerScore > computerScore)
