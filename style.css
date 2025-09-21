@@ -36,3 +36,8 @@ h1 {
 .card img {
     width: 5rem;
 }
+
+.output {
+    text-align: center;
+    font-size: 2rem;
+}
