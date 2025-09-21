@@ -21,6 +21,7 @@ h1 {
 .cards {
     display: flex;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .card {
