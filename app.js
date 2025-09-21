@@ -13,12 +13,6 @@ const scissorsTextValue = "scissors";
 let playerScore = 0;
 let computerScore = 0;
 
-const choicesNumericValues = {
-    [rockTextValue]: rockNumericValue,
-    [paperTextValue]: paperNumericValue,
-    [scissorsTextValue]: scissorsNumericValue
-}
-
 const choicesTextValues = {
     [rockNumericValue]: rockTextValue,
     [paperNumericValue]: paperTextValue,
@@ -50,10 +44,6 @@ function getComputerChoice() {
     return choicesTextValues[randomNumber];
 }
 
-function getPlayerChoice(playerInput) {
-    return choicesTextValues[playerInput];
-}
-
 function playRound(playerChoice, computerChoice) {
     const gameResult = gameRules[playerChoice][computerChoice];
 
@@ -71,8 +61,8 @@ function playRound(playerChoice, computerChoice) {
         }
 }
 
-function playGame(playerSelection) {
-    const playerChoice = getPlayerChoice(playerSelection);
+function playGame(playerInput) {
+    const playerChoice = choicesTextValues[playerInput];
     const computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
 
